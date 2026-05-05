@@ -1,0 +1,54 @@
+cat <<EOF > index.html
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Hub</title>
+    <style>
+        body { font-family: sans-serif; background: #0f172a; color: white; padding: 20px; text-align: center; }
+        .card { background: #1e293b; border-radius: 15px; padding: 15px; margin-bottom: 15px; display: flex; align-items: center; gap: 15px; border: 1px solid #334155; }
+        .icon { width: 50px; height: 50px; border-radius: 10px; background: white; }
+        .content { flex: 1; text-align: right; }
+        h2 { margin: 0; font-size: 18px; color: #38bdf8; }
+        p { margin: 5px 0; font-size: 13px; color: #cbd5e1; }
+        .btn { display: block; background: #38bdf8; color: #0f172a; padding: 8px; text-decoration: none; border-radius: 5px; font-weight: bold; margin-top: 5px; }
+    </style>
+</head>
+<body>
+    <h1>AI Hub</h1>
+    <div class="card">
+        <img src="gemini.png" class="icon">
+        <div class="content">
+            <h2>Gemini</h2>
+            <p>مساعدك الإبداعي من جوجل.</p>
+            <a href="https://gemini.google.com" class="btn">فتح</a>
+        </div>
+    </div>
+    <div class="card">
+        <img src="chatgpt.png" class="icon">
+        <div class="content">
+            <h2>ChatGPT</h2>
+            <p>الأمان والموثوقية العالية.</p>
+            <a href="https://chatgpt.com" class="btn">فتح</a>
+        </div>
+    </div>
+    <div class="card">
+        <img src="deepseek.png" class="icon">
+        <div class="content">
+            <h2>DeepSeek</h2>
+            <p>المنطق والبرمجة والذكاء العملي.</p>
+            <a href="https://www.deepseek.com/" class="btn">فتح</a>
+        </div>
+    </div>
+    <div class="card">
+        <img src="claude.png" class="icon">
+        <div class="content">
+            <h2>Claude</h2>
+            <p>المحاكاة البشرية والتحليل العميق.</p>
+            <a href="https://claude.ai" class="btn">فتح</a>
+        </div>
+    </div>
+</body>
+</html>
+EOF
