@@ -13,18 +13,22 @@
         .spinner { width: 50px; height: 50px; border: 5px solid #334155; border-top: 5px solid var(--accent); border-radius: 50%; animation: spin 1s linear infinite; }
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 
-        /* التصميم */
+        /* التصميم الرئيسي */
         .container { max-width: 500px; margin: auto; }
-        h1 { color: var(--accent); font-size: 28px; margin-bottom: 25px; }
-        .card { background: var(--card); border-radius: 16px; padding: 15px; margin-bottom: 15px; display: flex; align-items: center; gap: 15px; border: 1px solid #334155; }
-        .icon-box { width: 50px; height: 50px; background: white; border-radius: 10px; display: flex; align-items: center; justify-content: center; padding: 5px; }
-        .icon-box svg, .icon-box img { width: 40px; height: 40px; }
-        .content { flex: 1; text-align: right; }
-        h2 { margin: 0; font-size: 17px; color: var(--accent); }
-        .btn { display: block; background: var(--accent); color: #0f172a; padding: 8px; text-decoration: none; border-radius: 8px; font-weight: bold; margin-top: 8px; text-align: center; }
+        h1 { color: var(--accent); font-size: 30px; margin-bottom: 25px; }
+        .card { background: var(--card); border-radius: 16px; padding: 15px; margin-bottom: 15px; display: flex; align-items: center; gap: 15px; border: 1px solid #334155; text-align: right; }
+        
+        .icon-box { width: 55px; height: 55px; min-width: 55px; background: white; border-radius: 12px; display: flex; align-items: center; justify-content: center; overflow: hidden; padding: 5px; }
+        .icon-box img { width: 100%; height: 100%; object-fit: contain; }
+        
+        .content { flex: 1; }
+        h2 { margin: 0; font-size: 18px; color: var(--accent); }
+        .btn { display: block; background: var(--accent); color: #0f172a; padding: 10px; text-decoration: none; border-radius: 8px; font-weight: bold; margin-top: 8px; text-align: center; }
 
-        .support-box { margin-top: 30px; padding: 15px; border: 2px dashed #334155; border-radius: 12px; }
-        .support-btn { background: #ef4444; color: white; padding: 10px; border-radius: 8px; text-decoration: none; display: block; margin-top: 10px; font-weight: bold; }
+        /* الدعم والسياسة */
+        .footer-box { margin-top: 30px; padding: 20px; border-top: 1px solid #334155; }
+        .support-btn { background: #ef4444; color: white; padding: 12px; border-radius: 10px; text-decoration: none; display: block; margin-bottom: 20px; font-weight: bold; }
+        .policy-text { font-size: 12px; color: #94a3b8; line-height: 1.6; background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px; }
     </style>
 </head>
 <body>
@@ -36,7 +40,7 @@
 
         <div class="card">
             <div class="icon-box">
-                <img src="https://www.gstatic.com/lamda/images/favicon_v1_150160c13ff21d30f1d3.png" alt="G">
+                <img src="https://www.gstatic.com/lamda/images/favicon_v1_150160c13ff21d30f1d3.png" alt="Gemini">
             </div>
             <div class="content">
                 <h2>Google Gemini</h2>
@@ -46,7 +50,7 @@
 
         <div class="card">
             <div class="icon-box">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" alt="C">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" alt="ChatGPT">
             </div>
             <div class="content">
                 <h2>OpenAI ChatGPT</h2>
@@ -55,8 +59,8 @@
         </div>
 
         <div class="card">
-            <div class="icon-box" style="background:#d97757">
-                <img src="https://claude.ai/images/apple-touch-icon.png" alt="Cl">
+            <div class="icon-box" style="background: #fbf0df;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/e/ed/Claude_AI_logo.svg" alt="Claude">
             </div>
             <div class="content">
                 <h2>Anthropic Claude</h2>
@@ -65,8 +69,8 @@
         </div>
 
         <div class="card">
-            <div class="icon-box" style="background:#000">
-                <img src="https://www.deepseek.com/favicon.ico" alt="D">
+            <div class="icon-box" style="background: #000;">
+                <img src="https://www.deepseek.com/favicon.ico" alt="DeepSeek">
             </div>
             <div class="content">
                 <h2>DeepSeek</h2>
@@ -74,9 +78,13 @@
             </div>
         </div>
 
-        <div class="support-box">
-            <h3>🛠️ الدعم الفني</h3>
-            <a href="mailto:AiHubsupert@Gmail.com?subject=مشكلة في تطبيق AI Hub" class="support-btn">إرسال رسالة دعم</a>
+        <div class="footer-box">
+            <a href="mailto:AiHubsupert@Gmail.com?subject=دعم فني AI Hub" class="support-btn">إرسال رسالة دعم</a>
+            
+            <div class="policy-text">
+                <strong>حقوق النشر والسياسة:</strong><br>
+                جميع الحقوق محفوظة لـ AI Hub © 2026. هذا التطبيق هو واجهة لتسهيل الوصول لخدمات الذكاء الاصطناعي. نحن لا نجمع بياناتك، والخصوصية تخضع لسياسات المواقع المزودة للخدمة.
+            </div>
         </div>
     </div>
 
