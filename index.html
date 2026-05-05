@@ -1,54 +1,110 @@
-cat <<EOF > index.html
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Hub</title>
+    <title>AI Hub - المركز الذكي</title>
     <style>
-        body { font-family: sans-serif; background: #0f172a; color: white; padding: 20px; text-align: center; }
-        .card { background: #1e293b; border-radius: 15px; padding: 15px; margin-bottom: 15px; display: flex; align-items: center; gap: 15px; border: 1px solid #334155; }
-        .icon { width: 50px; height: 50px; border-radius: 10px; background: white; }
+        :root { --bg: #0f172a; --card: #1e293b; --text: #f8fafc; --accent: #38bdf8; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: var(--bg); color: var(--text); margin: 0; padding: 20px; text-align: center; }
+        
+        /* شاشة التحميل */
+        #loader { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--bg); display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 9999; transition: 0.5s; }
+        .spinner { width: 50px; height: 50px; border: 5px solid #334155; border-top: 5px solid var(--accent); border-radius: 50%; animation: spin 1s linear infinite; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+        /* البطاقات */
+        h1 { color: var(--accent); margin-bottom: 30px; }
+        .card { background: var(--card); border-radius: 15px; padding: 15px; margin-bottom: 15px; display: flex; align-items: center; gap: 15px; border: 1px solid #334155; transition: 0.3s; }
+        .card:hover { transform: scale(1.02); border-color: var(--accent); }
+        .icon { width: 60px; height: 60px; border-radius: 12px; object-fit: cover; background: #fff; }
         .content { flex: 1; text-align: right; }
-        h2 { margin: 0; font-size: 18px; color: #38bdf8; }
+        h2 { margin: 0; font-size: 18px; color: var(--accent); }
         p { margin: 5px 0; font-size: 13px; color: #cbd5e1; }
-        .btn { display: block; background: #38bdf8; color: #0f172a; padding: 8px; text-decoration: none; border-radius: 5px; font-weight: bold; margin-top: 5px; }
+        .btn { display: inline-block; background: var(--accent); color: #0f172a; padding: 8px 20px; text-decoration: none; border-radius: 8px; font-weight: bold; margin-top: 5px; }
+
+        /* قسم الدعم */
+        .support-section { margin-top: 40px; padding: 20px; border-top: 1px solid #334155; }
+        .support-btn { background: #ef4444; color: white; padding: 10px; border-radius: 8px; text-decoration: none; display: block; width: 200px; margin: 10px auto; }
+
+        /* نافذة السياسة */
+        .modal { display: none; position: fixed; z-index: 10000; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); }
+        .modal-content { background: var(--card); margin: 15% auto; padding: 20px; width: 80%; border-radius: 15px; text-align: right; max-height: 70vh; overflow-y: auto; }
+        .close { color: #aaa; float: left; font-size: 28px; font-weight: bold; cursor: pointer; }
+        footer { margin-top: 30px; font-size: 12px; color: #64748b; }
     </style>
 </head>
 <body>
-    <h1>AI Hub</h1>
+
+    <div id="loader">
+        <div class="spinner"></div>
+        <p>جاري تشغيل محركات الذكاء...</p>
+    </div>
+
+    <h1>AI Hub ⚡</h1>
+
     <div class="card">
-        <img src="gemini.png" class="icon">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Gemini_language_model_logo.svg/1024px-Gemini_language_model_logo.svg.png" class="icon">
         <div class="content">
             <h2>Gemini</h2>
-            <p>مساعدك الإبداعي من جوجل.</p>
-            <a href="https://gemini.google.com" class="btn">فتح</a>
+            <p>مساعد جوجل المتطور للإبداع والبحث.</p>
+            <a href="https://gemini.google.com" class="btn">دخول</a>
         </div>
     </div>
+
     <div class="card">
-        <img src="chatgpt.png" class="icon">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/ChatGPT_logo.svg/1024px-ChatGPT_logo.svg.png" class="icon">
         <div class="content">
             <h2>ChatGPT</h2>
-            <p>الأمان والموثوقية العالية.</p>
-            <a href="https://chatgpt.com" class="btn">فتح</a>
+            <p>الأشهر عالمياً في المحادثة والكتابة.</p>
+            <a href="https://chatgpt.com" class="btn">دخول</a>
         </div>
     </div>
+
     <div class="card">
-        <img src="deepseek.png" class="icon">
+        <img src="https://www.deepseek.com/favicon.ico" class="icon" style="background: #000;">
         <div class="content">
             <h2>DeepSeek</h2>
-            <p>المنطق والبرمجة والذكاء العملي.</p>
-            <a href="https://www.deepseek.com/" class="btn">فتح</a>
+            <p>متخصص في البرمجة والمنطق الرياضي.</p>
+            <a href="https://www.deepseek.com/" class="btn">دخول</a>
         </div>
     </div>
-    <div class="card">
-        <img src="claude.png" class="icon">
-        <div class="content">
-            <h2>Claude</h2>
-            <p>المحاكاة البشرية والتحليل العميق.</p>
-            <a href="https://claude.ai" class="btn">فتح</a>
+
+    <div class="support-section">
+        <h3>هل واجهت مشكلة؟</h3>
+        <p>نحن هنا لمساعدتك في أي وقت.</p>
+        <a href="mailto:support@yourdomain.com" class="support-btn">إرسال شكوى أو اقتراح</a>
+    </div>
+
+    <footer>
+        <p>© 2026 جميع الحقوق محفوظة لـ AI Hub</p>
+        <p><a href="#" onclick="showPolicy()" style="color: var(--accent);">سياسة الخصوصية والاستخدام</a></p>
+    </footer>
+
+    <div id="policyModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="hidePolicy()">&times;</span>
+            <h2>سياسة الاستخدام والخصوصية</h2>
+            <p>1. هذا التطبيق يوفر وصولاً سريعاً لخدمات الذكاء الاصطناعي الخارجية.</p>
+            <p>2. لا نقوم بتخزين أي بيانات شخصية أو محادثات تتم داخل المواقع المفتوحة.</p>
+            <p>3. المسؤولية القانونية عن المحتوى تعود للمستخدم وللشركات المزودة للخدمة.</p>
+            <p>4. تم تطوير هذا التطبيق لغرض تسهيل الوصول التعليمي والتقني.</p>
         </div>
     </div>
+
+    <script>
+        // إخفاء شاشة التحميل
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                document.getElementById('loader').style.opacity = '0';
+                setTimeout(() => { document.getElementById('loader').style.display = 'none'; }, 500);
+            }, 1500);
+        });
+
+        // وظائف نافذة السياسة
+        function showPolicy() { document.getElementById('policyModal').style.display = 'block'; }
+        function hidePolicy() { document.getElementById('policyModal').style.display = 'none'; }
+    </script>
 </body>
 </html>
-EOF
+
