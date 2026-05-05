@@ -8,89 +8,97 @@
         :root { --bg: #0f172a; --card: #1e293b; --text: #f8fafc; --accent: #38bdf8; }
         body { font-family: sans-serif; background: var(--bg); color: var(--text); margin: 0; padding: 20px; text-align: center; }
         
-        /* شاشة التحميل Splash Screen */
-        #loader { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--bg); display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 9999; transition: 0.5s; }
+        /* شاشة التحميل الاحترافية */
+        #loader { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--bg); display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 9999; transition: opacity 0.5s; }
         .spinner { width: 60px; height: 60px; border: 6px solid #334155; border-top: 6px solid var(--accent); border-radius: 50%; animation: spin 1s linear infinite; }
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-        #loader h2 { color: var(--accent); margin-top: 20px; }
 
-        /* التصميم العام */
-        h1 { color: var(--accent); margin-bottom: 30px; font-size: 28px; }
-        .card { background: var(--card); border-radius: 15px; padding: 15px; margin-bottom: 20px; display: flex; align-items: center; gap: 15px; border: 1px solid #334155; transition: 0.3s; }
-        .card:hover { border-color: var(--accent); transform: translateY(-2px); }
-        .icon { width: 50px; height: 50px; border-radius: 10px; background: #fff; padding: 8px; object-fit: contain; }
+        /* التصميم */
+        .container { max-width: 500px; margin: auto; }
+        h1 { color: var(--accent); font-size: 32px; display: flex; align-items: center; justify-content: center; gap: 10px; }
+        .card { background: var(--card); border-radius: 16px; padding: 20px; margin-bottom: 20px; display: flex; align-items: center; gap: 15px; border: 1px solid #334155; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
+        
+        /* حل مشكلة الصور: حجم ثابت وخلفية بيضاء للأيقونات */
+        .icon-box { width: 60px; height: 60px; min-width: 60px; background: white; border-radius: 12px; display: flex; align-items: center; justify-content: center; overflow: hidden; padding: 5px; }
+        .icon-box img { width: 100%; height: 100%; object-fit: contain; }
+        
         .content { flex: 1; text-align: right; }
         h2 { margin: 0; font-size: 18px; color: var(--accent); }
-        p { margin: 5px 0; font-size: 13px; color: #cbd5e1; }
-        .btn { display: inline-block; background: var(--accent); color: #0f172a; padding: 10px 25px; text-decoration: none; border-radius: 8px; font-weight: bold; margin-top: 8px; }
+        p { margin: 5px 0; font-size: 13px; color: #cbd5e1; line-height: 1.4; }
+        .btn { display: inline-block; background: var(--accent); color: #0f172a; padding: 10px 25px; text-decoration: none; border-radius: 8px; font-weight: bold; margin-top: 10px; width: 100%; box-sizing: border-box; }
 
-        /* قسم الدعم */
-        .support-box { margin-top: 40px; padding: 20px; border: 2px dashed #334155; border-radius: 15px; background: rgba(56, 189, 248, 0.05); }
-        .support-btn { background: #ef4444; color: white; padding: 12px; border-radius: 10px; text-decoration: none; display: inline-block; margin-top: 15px; font-weight: bold; width: 80%; }
-
-        /* التذييل والسياسات */
-        footer { margin-top: 40px; border-top: 1px solid #334155; padding-top: 20px; font-size: 12px; color: #64748b; }
-        .policy-link { color: var(--accent); cursor: pointer; text-decoration: underline; }
+        /* الدعم */
+        .support-box { margin-top: 40px; padding: 20px; border: 2px dashed #334155; border-radius: 15px; }
+        .support-btn { background: #ef4444; color: white; padding: 12px; border-radius: 10px; text-decoration: none; display: block; margin-top: 15px; font-weight: bold; }
+        
+        footer { margin-top: 40px; color: #64748b; font-size: 12px; }
     </style>
 </head>
 <body>
 
     <div id="loader">
         <div class="spinner"></div>
-        <h2>AI HUB</h2>
-        <p>جاري تشغيل الذكاء الاصطناعي...</p>
+        <h2 style="color: var(--accent); margin-top: 20px;">AI HUB</h2>
     </div>
 
-    <h1>AI Hub ⚡</h1>
+    <div class="container">
+        <h1>⚡ AI Hub</h1>
 
-    <div class="card">
-        <img src="https://www.gstatic.com/lamda/images/favicon_v1_150160c13ff21d30f1d3.png" class="icon">
-        <div class="content">
-            <h2>Google Gemini</h2>
-            <p>مساعدك الذكي من جوجل للبحث والإبداع.</p>
-            <a href="https://gemini.google.com" class="btn">دخول</a>
+        <div class="card">
+            <div class="icon-box">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/45/Gemini_language_model_logo.svg" alt="Gemini">
+            </div>
+            <div class="content">
+                <h2>Google Gemini</h2>
+                <p>مساعد جوجل الذكي للبحث والإبداع.</p>
+                <a href="https://gemini.google.com" class="btn">دخول</a>
+            </div>
         </div>
-    </div>
 
-    <div class="card">
-        <img src="https://static.cdnlogo.com/logos/c/38/chatgpt.svg" class="icon">
-        <div class="content">
-            <h2>OpenAI ChatGPT</h2>
-            <p>أقوى نموذج لغوي للمحادثة والكتابة.</p>
-            <a href="https://chatgpt.com" class="btn">دخول</a>
+        <div class="card">
+            <div class="icon-box">
+                <img src="https://static-00.iconduck.com/assets.00/chatgpt-icon-1024x1024-v58ls9lh.png" alt="ChatGPT">
+            </div>
+            <div class="content">
+                <h2>OpenAI ChatGPT</h2>
+                <p>أقوى نموذج لغوي للمحادثة والكتابة.</p>
+                <a href="https://chatgpt.com" class="btn">دخول</a>
+            </div>
         </div>
-    </div>
 
-    <div class="card">
-        <img src="https://www.deepseek.com/favicon.ico" class="icon" style="background: #000;">
-        <div class="content">
-            <h2>DeepSeek</h2>
-            <p>خبير البرمجة والمنطق والذكاء العميق.</p>
-            <a href="https://www.deepseek.com/" class="btn">دخول</a>
+        <div class="card">
+            <div class="icon-box" style="background: #000;">
+                <img src="https://www.deepseek.com/favicon.ico" alt="DeepSeek">
+            </div>
+            <div class="content">
+                <h2>DeepSeek</h2>
+                <p>خبير البرمجة والمنطق والذكاء العميق.</p>
+                <a href="https://www.deepseek.com/" class="btn">دخول</a>
+            </div>
         </div>
-    </div>
 
-    <div class="support-box">
-        <h3>مركز الدعم الفني 🛠️</h3>
-        <p>هل واجهت مشكلة؟ أرسل لنا وسنرد عليك فوراً</p>
-        <a href="mailto:AiHubsupert@Gmail.com?subject=إبلاغ عن مشكلة - AI Hub" class="support-btn">إرسال رسالة دعم</a>
-    </div>
+        <div class="support-box">
+            <h3>🛠️ مركز الدعم الفني</h3>
+            <p>تواجه مشكلة؟ أرسل شكوتك فوراً.</p>
+            <a href="mailto:AiHubsupert@Gmail.com?subject=مشكلة في تطبيق AI Hub" class="support-btn">إرسال رسالة دعم</a>
+        </div>
 
-    <footer>
-        <p>© 2026 جميع الحقوق محفوظة لـ AI Hub</p>
-        <p>استخدامك للتطبيق يعني موافقتك على <span class="policy-link" onclick="alert('سياسة الخصوصية: هذا التطبيق هو وسيط للوصول لخدمات الذكاء الاصطناعي ولا يقوم بجمع بياناتك الشخصية.')">سياسة الاستخدام</span></p>
-    </footer>
+        <footer>
+            <p>© 2026 جميع الحقوق محفوظة لـ AI Hub</p>
+        </footer>
+    </div>
 
     <script>
-        // إخفاء شاشة التحميل بعد ثانية ونصف
-        window.addEventListener('load', function() {
-            setTimeout(() => {
-                document.getElementById('loader').style.opacity = '0';
-                setTimeout(() => {
-                    document.getElementById('loader').style.display = 'none';
+        // كود تشغيل وإخفاء الشاشة بدقة
+        window.onload = function() {
+            setTimeout(function() {
+                var loader = document.getElementById('loader');
+                loader.style.opacity = '0';
+                setTimeout(function() {
+                    loader.style.display = 'none';
                 }, 500);
-            }, 1500);
-        });
+            }, 1000); // الشاشة تظهر لمدة ثانية واحدة
+        };
     </script>
 </body>
 </html>
