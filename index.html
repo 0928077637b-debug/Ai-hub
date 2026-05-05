@@ -6,57 +6,57 @@
     <title>AI Hub - المركز الذكي</title>
     <style>
         :root { --bg: #0f172a; --card: #1e293b; --text: #f8fafc; --accent: #38bdf8; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: var(--bg); color: var(--text); margin: 0; padding: 20px; text-align: center; }
+        body { font-family: sans-serif; background: var(--bg); color: var(--text); margin: 0; padding: 20px; text-align: center; }
         
-        /* شاشة التحميل */
+        /* شاشة التحميل Splash Screen */
         #loader { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--bg); display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 9999; transition: 0.5s; }
-        .spinner { width: 50px; height: 50px; border: 5px solid #334155; border-top: 5px solid var(--accent); border-radius: 50%; animation: spin 1s linear infinite; }
+        .spinner { width: 60px; height: 60px; border: 6px solid #334155; border-top: 6px solid var(--accent); border-radius: 50%; animation: spin 1s linear infinite; }
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        #loader h2 { color: var(--accent); margin-top: 20px; }
 
-        /* البطاقات */
-        h1 { color: var(--accent); margin-bottom: 30px; }
-        .card { background: var(--card); border-radius: 15px; padding: 15px; margin-bottom: 15px; display: flex; align-items: center; gap: 15px; border: 1px solid #334155; transition: 0.3s; }
-        .card:hover { transform: scale(1.02); border-color: var(--accent); }
-        .icon { width: 60px; height: 60px; border-radius: 12px; object-fit: cover; background: #fff; }
+        /* التصميم العام */
+        h1 { color: var(--accent); margin-bottom: 30px; font-size: 28px; }
+        .card { background: var(--card); border-radius: 15px; padding: 15px; margin-bottom: 20px; display: flex; align-items: center; gap: 15px; border: 1px solid #334155; transition: 0.3s; }
+        .card:hover { border-color: var(--accent); transform: translateY(-2px); }
+        .icon { width: 50px; height: 50px; border-radius: 10px; background: #fff; padding: 8px; object-fit: contain; }
         .content { flex: 1; text-align: right; }
         h2 { margin: 0; font-size: 18px; color: var(--accent); }
         p { margin: 5px 0; font-size: 13px; color: #cbd5e1; }
-        .btn { display: inline-block; background: var(--accent); color: #0f172a; padding: 8px 20px; text-decoration: none; border-radius: 8px; font-weight: bold; margin-top: 5px; }
+        .btn { display: inline-block; background: var(--accent); color: #0f172a; padding: 10px 25px; text-decoration: none; border-radius: 8px; font-weight: bold; margin-top: 8px; }
 
         /* قسم الدعم */
-        .support-section { margin-top: 40px; padding: 20px; border-top: 1px solid #334155; }
-        .support-btn { background: #ef4444; color: white; padding: 10px; border-radius: 8px; text-decoration: none; display: block; width: 200px; margin: 10px auto; }
+        .support-box { margin-top: 40px; padding: 20px; border: 2px dashed #334155; border-radius: 15px; background: rgba(56, 189, 248, 0.05); }
+        .support-btn { background: #ef4444; color: white; padding: 12px; border-radius: 10px; text-decoration: none; display: inline-block; margin-top: 15px; font-weight: bold; width: 80%; }
 
-        /* نافذة السياسة */
-        .modal { display: none; position: fixed; z-index: 10000; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); }
-        .modal-content { background: var(--card); margin: 15% auto; padding: 20px; width: 80%; border-radius: 15px; text-align: right; max-height: 70vh; overflow-y: auto; }
-        .close { color: #aaa; float: left; font-size: 28px; font-weight: bold; cursor: pointer; }
-        footer { margin-top: 30px; font-size: 12px; color: #64748b; }
+        /* التذييل والسياسات */
+        footer { margin-top: 40px; border-top: 1px solid #334155; padding-top: 20px; font-size: 12px; color: #64748b; }
+        .policy-link { color: var(--accent); cursor: pointer; text-decoration: underline; }
     </style>
 </head>
 <body>
 
     <div id="loader">
         <div class="spinner"></div>
-        <p>جاري تشغيل محركات الذكاء...</p>
+        <h2>AI HUB</h2>
+        <p>جاري تشغيل الذكاء الاصطناعي...</p>
     </div>
 
     <h1>AI Hub ⚡</h1>
 
     <div class="card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Gemini_language_model_logo.svg/1024px-Gemini_language_model_logo.svg.png" class="icon">
+        <img src="https://www.gstatic.com/lamda/images/favicon_v1_150160c13ff21d30f1d3.png" class="icon">
         <div class="content">
-            <h2>Gemini</h2>
-            <p>مساعد جوجل المتطور للإبداع والبحث.</p>
+            <h2>Google Gemini</h2>
+            <p>مساعدك الذكي من جوجل للبحث والإبداع.</p>
             <a href="https://gemini.google.com" class="btn">دخول</a>
         </div>
     </div>
 
     <div class="card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/ChatGPT_logo.svg/1024px-ChatGPT_logo.svg.png" class="icon">
+        <img src="https://static.cdnlogo.com/logos/c/38/chatgpt.svg" class="icon">
         <div class="content">
-            <h2>ChatGPT</h2>
-            <p>الأشهر عالمياً في المحادثة والكتابة.</p>
+            <h2>OpenAI ChatGPT</h2>
+            <p>أقوى نموذج لغوي للمحادثة والكتابة.</p>
             <a href="https://chatgpt.com" class="btn">دخول</a>
         </div>
     </div>
@@ -65,46 +65,32 @@
         <img src="https://www.deepseek.com/favicon.ico" class="icon" style="background: #000;">
         <div class="content">
             <h2>DeepSeek</h2>
-            <p>متخصص في البرمجة والمنطق الرياضي.</p>
+            <p>خبير البرمجة والمنطق والذكاء العميق.</p>
             <a href="https://www.deepseek.com/" class="btn">دخول</a>
         </div>
     </div>
 
-    <div class="support-section">
-        <h3>هل واجهت مشكلة؟</h3>
-        <p>نحن هنا لمساعدتك في أي وقت.</p>
-        <a href="mailto:support@yourdomain.com" class="support-btn">إرسال شكوى أو اقتراح</a>
+    <div class="support-box">
+        <h3>مركز الدعم الفني 🛠️</h3>
+        <p>هل واجهت مشكلة؟ أرسل لنا وسنرد عليك فوراً</p>
+        <a href="mailto:AiHubsupert@Gmail.com?subject=إبلاغ عن مشكلة - AI Hub" class="support-btn">إرسال رسالة دعم</a>
     </div>
 
     <footer>
         <p>© 2026 جميع الحقوق محفوظة لـ AI Hub</p>
-        <p><a href="#" onclick="showPolicy()" style="color: var(--accent);">سياسة الخصوصية والاستخدام</a></p>
+        <p>استخدامك للتطبيق يعني موافقتك على <span class="policy-link" onclick="alert('سياسة الخصوصية: هذا التطبيق هو وسيط للوصول لخدمات الذكاء الاصطناعي ولا يقوم بجمع بياناتك الشخصية.')">سياسة الاستخدام</span></p>
     </footer>
 
-    <div id="policyModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="hidePolicy()">&times;</span>
-            <h2>سياسة الاستخدام والخصوصية</h2>
-            <p>1. هذا التطبيق يوفر وصولاً سريعاً لخدمات الذكاء الاصطناعي الخارجية.</p>
-            <p>2. لا نقوم بتخزين أي بيانات شخصية أو محادثات تتم داخل المواقع المفتوحة.</p>
-            <p>3. المسؤولية القانونية عن المحتوى تعود للمستخدم وللشركات المزودة للخدمة.</p>
-            <p>4. تم تطوير هذا التطبيق لغرض تسهيل الوصول التعليمي والتقني.</p>
-        </div>
-    </div>
-
     <script>
-        // إخفاء شاشة التحميل
+        // إخفاء شاشة التحميل بعد ثانية ونصف
         window.addEventListener('load', function() {
             setTimeout(() => {
                 document.getElementById('loader').style.opacity = '0';
-                setTimeout(() => { document.getElementById('loader').style.display = 'none'; }, 500);
+                setTimeout(() => {
+                    document.getElementById('loader').style.display = 'none';
+                }, 500);
             }, 1500);
         });
-
-        // وظائف نافذة السياسة
-        function showPolicy() { document.getElementById('policyModal').style.display = 'block'; }
-        function hidePolicy() { document.getElementById('policyModal').style.display = 'none'; }
     </script>
 </body>
 </html>
-
